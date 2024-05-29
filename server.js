@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB bağlantısı
-const mongoURI = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017/kisisel-web-sitesi?authSource=admin`;
+const mongoURI = process.env.MONGO_URI;
 
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
