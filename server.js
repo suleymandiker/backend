@@ -15,8 +15,7 @@ const mongoURI = process.env.MONGO_URI;
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  tlsAllowInvalidCertificates: true, // Geçersiz sertifikalara izin ver
-  tlsInsecure: true // Insecure TLS bağlantısına izin ver
+  tlsAllowInvalidCertificates: true // Geçersiz sertifikalara izin ver
 });
 
 const db = mongoose.connection;
@@ -51,5 +50,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-
