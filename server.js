@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const postsRouter = require('./routes/posts');
 
 const app = express();
 
@@ -49,6 +50,7 @@ apiRouter.get('/users', async (req, res) => {
 
 // Tüm API rotalarını '/api' altına yerleştir
 app.use('/api', apiRouter);
+app.use('/posts', postsRouter);
 
 // Sunucuyu başlat
 const PORT = process.env.PORT || 5000;
